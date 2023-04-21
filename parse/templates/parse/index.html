@@ -13,10 +13,13 @@
 yello
 <ul>
 {% for i in data %}
+    {% if i.img %}
 
-    <img src="{{ i.img_url }}" alt="">{{ i.img_url }}
+    <ol><img src="{{ i.img.url }}" alt="{{ i.title}}" width="200"></ol>
 
-<ol><img src="{{ i.img }}" alt="{{ i.title}}" width="200"></ol>
+    {% else %}
+    <img src="{{ i.img_url }}" alt="{{ i.img_url }}" width="200">
+    {% endif %}
 {% endfor %}
     </ul>
 
