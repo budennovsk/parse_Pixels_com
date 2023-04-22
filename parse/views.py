@@ -20,15 +20,15 @@ def index(request):
             return redirect('index')
 
     data = Data.objects.all()
+    os.chdir(r'E:\Django\parse_Pixels_com\media')
+    for root, dirs, files in os.walk('hackr'):
 
-    # print(os.getcwd())
-    # with open('media/hackr/38275.jpeg', 'rb') as f:
-    #     print(f.name)
-    #     ph = 'http://127.0.0.1:8000/' + f.name
-    #     df = Data.objects.create(img='/hackr/38275.jpeg')
-    #     df
-    # # df = Data()
-    # df.img_file.save('1.png', File(open('media/specs/1.png', 'rb')))
+        for _file in files:
+
+            with open(f'{root}\{_file}', 'rb') as f:
+                # ph = 'http://127.0.0.1:8000/' + f.name
+                if not Data.objects.filter(img=f.name).exists():
+                    Data.objects.create(img=f.name)
 
     form = FileForm()
     return render(request, 'parse/index.html', {'data': data, 'form': form})
