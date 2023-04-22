@@ -1,3 +1,5 @@
+import os
+
 from django.core.files import File
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
@@ -19,13 +21,14 @@ def index(request):
 
     data = Data.objects.all()
 
+
     # with open('parse/parse_img/10.png', 'rb') as f:
     #     print(f.name)
     #     ph = 'http://127.0.0.1:8000/' + f.name
     #     df = Data.objects.create(img_url=ph)
     #     df
-    df = Data()
-    df.img_file.save('1.png', File(open('media/specs/1.png', 'rb')))
+    # df = Data()
+    # df.img_file.save('1.png', File(open('media/specs/1.png', 'rb')))
 
     form = FileForm()
     return render(request, 'parse/index.html', {'data': data, 'form': form})

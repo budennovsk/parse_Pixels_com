@@ -1,7 +1,6 @@
 import math
 import os.path
 from password import API_KEY
-from bs4 import BeautifulSoup
 import requests
 import json
 from tqdm import tqdm
@@ -17,14 +16,17 @@ def get_scrap(query=''):
     if response.status_code != 200:
         return f'Ошибка'
 
-    img_dir_path = '_'.join(i for i in query.split(' ') if i.isalnum())
 
-    if not os.path.exists(img_dir_path):
-        os.makedirs(img_dir_path)
+    img_dir_path = '_'.join(i for i in query.split(' ') if i.isalnum())
+    os.chdir(os.pardir)
+    c = os.getcwd()
+
+    if not os.path.exists(f'{c}/media/{img_dir_path}'):
+        os.makedirs(f'{c}/media/{img_dir_path}')
     json_data = response.json()
 
-    # with open(f'result_{query}.json', 'w') as file:
-    #     json.dump(json_data, file, indent=4, ensure_ascii=False)
+    with open(f'parse/json/result_{query}.json', 'w') as file:
+        json.dump(json_data, file, indent=4, ensure_ascii=False)
 
     image_count = json_data.get('total_results')
     if not json_data.get('next_page'):
@@ -45,9 +47,8 @@ def get_scrap(query=''):
 def download_img(img_lst=[], img_dir_path=''):
     for i in tqdm(img_lst):
         response = requests.get(url=i)
-
         if response.status_code == 200:
-            with open(f'./{img_dir_path}/{i.split("-")[-1]}', 'wb') as file:
+            with open(f'./media/{img_dir_path}/{i.split("-")[-1]}', 'wb') as file:
                 file.write(response.content)
 
 
