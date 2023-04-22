@@ -21,13 +21,13 @@ def index(request):
 
     data = Data.objects.all()
 
-
-    # with open('parse/parse_img/10.png', 'rb') as f:
+    # print(os.getcwd())
+    # with open('media/hackr/38275.jpeg', 'rb') as f:
     #     print(f.name)
     #     ph = 'http://127.0.0.1:8000/' + f.name
-    #     df = Data.objects.create(img_url=ph)
+    #     df = Data.objects.create(img='/hackr/38275.jpeg')
     #     df
-    # df = Data()
+    # # df = Data()
     # df.img_file.save('1.png', File(open('media/specs/1.png', 'rb')))
 
     form = FileForm()
