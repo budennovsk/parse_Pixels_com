@@ -5,8 +5,8 @@
 <li><h3>с добавлением в БД через форму или через поиск</h3></li>
 </ul>
 
-<h3>Домашняя страница с пустой БД</h3>
-![6](https://github.com/budennovsk/parse_Pixels_com/assets/97764479/84e4efdf-0648-40c2-8a08-7e61f7ce85a1)
+
+Домашняя страница с пустой БД</h3>
 
 
 <img src="https://user-images.githubusercontent.com/97764479/6814fe29-26eb-46d7-bc06-5ad303263a683.png" width=100% height=100%>
