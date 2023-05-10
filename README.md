@@ -28,6 +28,6 @@
 <img src="https://github.com/budennovsk/parse_Pixels_com/assets/97764479/1a23024f-7c70-49b0-b53f-d88f64ea6369" width=70% height=70%>
 <br>
 
-<h1>P.S. С РОССИИ работает API только через VPN (ошибка 522) </h1
+## P.S. :no_entry: ИЗ РОССИИ работает API только через VPN (ошибка 522) :no_entry:
 
 
