@@ -5,7 +5,7 @@
 <li><h3>без API с помощью bs4 </h3></li>
 <li><h3>с добавлением в БД через форму или через поиск</h3></li>
 </ul>
-
+<br>
 <h3>Домашняя страница с пустой БД</h3>
 
 <img src="https://github.com/budennovsk/parse_Pixels_com/assets/97764479/c5bfea29-6d97-4393-b605-8facc134477a" width=70% height=70%>
